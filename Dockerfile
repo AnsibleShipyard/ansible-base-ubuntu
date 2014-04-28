@@ -8,7 +8,8 @@ FROM ubuntu:13.10
 MAINTAINER Jason Giedymin
 RUN apt-get clean
 RUN apt-get -y update
-RUN apt-get install -y python-yaml python-jinja2 git unzip
+RUN apt-get install -y python-dev python-yaml python-jinja2 git unzip python-pip
+RUN pip install paramiko PyYAML jinja2 httplib2
 RUN git clone http://github.com/ansible/ansible.git /tmp/ansible
 WORKDIR /tmp/ansible
 ENV PATH /tmp/ansible/bin:/sbin:/usr/sbin:/usr/bin:/bin:$PATH
