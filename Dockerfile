@@ -10,7 +10,7 @@ MAINTAINER Jason Giedymin
 RUN apt-get clean
 RUN apt-get -y update
 RUN apt-get install -y python-dev python-yaml python-jinja2 git unzip python-pip
-RUN pip install paramiko PyYAML jinja2 httplib2
+RUN pip install paramiko PyYAML jinja2 httplib2 boto
 RUN git clone http://github.com/ansible/ansible.git /tmp/ansible
 
 WORKDIR /tmp/ansible
