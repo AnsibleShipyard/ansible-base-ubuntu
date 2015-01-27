@@ -16,7 +16,7 @@ usage() {
 }
 
 # Builds the image
-cmd=time docker build -t $DOCKERNAME .
+cmd=time docker build --force-rm -t $DOCKERNAME .
 echo "$cmd"
 run=$($cmd)
 
