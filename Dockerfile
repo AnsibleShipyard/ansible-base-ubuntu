@@ -1,11 +1,19 @@
-#
-# jasongiedymin/ansible-base-ubuntu
-#   docker build -t jasongiedymin/ansible-base-ubuntu .
-#   https://github.com/AnsibleShipyard/ansible-base-ubuntu
-#
+# ------------------------------------------------------
+#                       Dockerfile
+# ------------------------------------------------------
+# image:    ansible-base-ubuntu
+# tag:      latest
+# name:     ansibleshipyard/ansible-mesos
+# version:  v0.1.0
+# repo:     https://github.com/AnsibleShipyard/ansible-base-ubuntu
+# how-to:   docker build -t ansibleshipyard/ansible-base-ubuntu .
+# Requires:
+# authors:  github:@jasongiedymin,
+#           github:
+# ------------------------------------------------------
 
-FROM ubuntu:13.10
-MAINTAINER Jason Giedymin
+FROM ubuntu:14.10
+MAINTAINER ansibleshipyard
 
 RUN apt-get clean
 RUN apt-get -y update

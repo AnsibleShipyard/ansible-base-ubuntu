@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKERNAME="jasongiedymin/ansible-base-ubuntu"
+DOCKERNAME="ansibleshipyard/ansible-base-ubuntu"
 
 usage() {
   echo
@@ -16,7 +16,9 @@ usage() {
 }
 
 # Builds the image
-run=$(time docker build -t $DOCKERNAME .)
+cmd=time docker build -t $DOCKERNAME .
+echo "$cmd"
+run=$($cmd)
 
 if [ $? == 0 ]; then
   usage
