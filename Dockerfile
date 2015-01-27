@@ -6,7 +6,7 @@
 # name:     ansibleshipyard/ansible-mesos
 # version:  v0.1.0
 # repo:     https://github.com/AnsibleShipyard/ansible-base-ubuntu
-# how-to:   docker build -t ansibleshipyard/ansible-base-ubuntu .
+# how-to:   docker build --force-rm -t ansibleshipyard/ansible-base-ubuntu .
 # Requires:
 # authors:  github:@jasongiedymin,
 #           github:
@@ -28,5 +28,6 @@ ENV ANSIBLE_LIBRARY /tmp/ansible/library
 ENV PYTHONPATH /tmp/ansible/lib:$PYTHON_PATH
 ENV WORKDIR /tmp/build
 
+RUN git submodule update --init --recursive
 RUN mkdir -p /tmp/build
 RUN ls -la /tmp/build
