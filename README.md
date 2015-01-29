@@ -9,13 +9,8 @@ dependencies to run it's many trusted
 
 ## Usage
 
-For more information see: [ansible-base-ubuntu Docker page](https://registry.hub.docker.com/u/ansibleshipyard/ansible-base-ubuntu/)
+docker pull [ansibleshipyard/ansible-scala](https://registry.hub.docker.com/u/ansibleshipyard/ansible-scala/)
 
-To start using this docker:
-
-```shell
-docker pull ansibleshipyard/ansible-base-ubuntu
-```
 
 ### Building
 
