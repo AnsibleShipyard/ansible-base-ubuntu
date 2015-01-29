@@ -9,7 +9,7 @@ dependencies to run it's many trusted
 
 ## Usage
 
-docker pull [ansibleshipyard/ansible-scala](https://registry.hub.docker.com/u/ansibleshipyard/ansible-scala/)
+docker pull [ansibleshipyard/ansible-base-ubuntu](https://registry.hub.docker.com/u/ansibleshipyard/ansible-base-ubuntu/)
 
 
 ### Building
