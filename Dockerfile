@@ -4,7 +4,7 @@
 # image:    ansible-base-ubuntu
 # tag:      latest
 # name:     ansibleshipyard/ansible-mesos
-# version:  v0.1.0
+# version:  v0.1.1
 # repo:     https://github.com/AnsibleShipyard/ansible-base-ubuntu
 # how-to:   docker build --force-rm -t ansibleshipyard/ansible-base-ubuntu .
 # Requires:
@@ -12,7 +12,7 @@
 #           github:
 # ------------------------------------------------------
 
-FROM ubuntu:14.10
+FROM ubuntu:latest # will be 14.04.1
 MAINTAINER ansibleshipyard
 
 RUN apt-get clean
