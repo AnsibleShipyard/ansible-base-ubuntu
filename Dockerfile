@@ -12,7 +12,8 @@
 #           github:
 # ------------------------------------------------------
 
-FROM ubuntu:latest # will be 14.04.1
+# will be 14.04.1
+FROM ubuntu:latest
 MAINTAINER ansibleshipyard
 
 RUN apt-get clean
