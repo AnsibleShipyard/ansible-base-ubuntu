@@ -16,19 +16,28 @@
 FROM ubuntu:latest
 MAINTAINER ansibleshipyard
 
+# Work area and prep
+WORKDIR /usr/share/pyshared/ansible
+ENV WORKDIR /usr/share/pyshared/ansible
+RUN mkdir -p $WORKDIR
+
+# Install deps
 RUN apt-get clean
 RUN apt-get -y update
 RUN apt-get install -y python-dev python-yaml python-jinja2 git unzip python-pip
 RUN pip install paramiko PyYAML jinja2 httplib2 boto
-RUN git clone http://github.com/ansible/ansible.git /tmp/ansible
 
-WORKDIR /tmp/ansible
+# Setup Paths (after)
+ENV PATH $WORKDIR/bin:/sbin:/usr/sbin:/usr/bin:/bin:$PATH
+ENV ANSIBLE_LIBRARY $WORKDIR/library
+ENV PYTHONPATH $WORKDIR/lib:$PYTHON_PATH
 
-ENV PATH /tmp/ansible/bin:/sbin:/usr/sbin:/usr/bin:/bin:$PATH
-ENV ANSIBLE_LIBRARY /tmp/ansible/library
-ENV PYTHONPATH /tmp/ansible/lib:$PYTHON_PATH
-ENV WORKDIR /tmp/build
+# Install ansible dev
+# https://www.debian.org/doc/packaging-manuals/python-policy/ch-python.html
+RUN git clone http://github.com/ansible/ansible.git /usr/share/pyshared/ansible
 
+# Get submodules
 RUN git submodule update --init --recursive
-RUN mkdir -p /tmp/build
-RUN ls -la /tmp/build
+
+# Test
+RUN ls -la $WORKDIR
